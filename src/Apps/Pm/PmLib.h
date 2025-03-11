@@ -86,7 +86,7 @@ using namespace std;
 #include "DbCArray.h"
 
 // Generic macros
-typedef unsigned char byte;         // 1 byte 
+typedef unsigned char gs_byte;      // 1 byte (renamed to avoid conflict with std::byte)
 typedef unsigned short int word;    // 2 bytes
 typedef unsigned int longWord; // 4 bytes
 typedef signed int sLongWord;  // 4 bytes

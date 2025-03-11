@@ -53,8 +53,9 @@ public:
 		
   // VT - Packet handler function prototypes
   void InitialisePacketHandler ();
-  friend unsigned int CRC_32bit (byte*, word);
-  friend int SendBSUPacket (const int, const char, const byte *, const int, const int);
+
+  friend unsigned int CRC_32bit (gs_byte*, word);
+  friend int SendBSUPacket (const int, const char, const gs_byte *, const int, const int);
 
   // VT - Packet handler variables
   struct PacketStructure BSUPacket;

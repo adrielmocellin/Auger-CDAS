@@ -114,7 +114,7 @@ PmConnection::InitialisePacketHandler (void)
 
 /*-----------------------------------------------------------------------*/
 unsigned int
-CRC_32bit (byte * message, word length_in_bytes)
+CRC_32bit (gs_byte * message, word length_in_bytes)
 /* DESCRIPTION:
  *   This function initialises the ForwardPM global array of
  *   packet structures. This function must be called before
@@ -155,7 +155,7 @@ CRC_32bit (byte * message, word length_in_bytes)
 int
 SendBSUPacket (const int length,
 			     const char type,
-			     const byte * data,
+			     const gs_byte * data,
 			     const int BSUStationID,
 			     const int SocketDescriptor)
 /* DESCRIPTION:
@@ -583,7 +583,7 @@ PmLogPrint(IKDEBUG,"*  Entering for sending data to BSU client (%d) socket=%d...
 #endif
   // Send data to the BSU channel
   memcpy (data, _broadcastServiceP->listOfOutput_[0].output, length_data);
-  int bytes_written = SendBSUPacket ((int) length_data, DATA, (const unsigned char *) (data + 1), (int) _id, _socket);	// RR
+  int bytes_written = SendBSUPacket((int) length_data, DATA, (const gs_byte *)(data + 1), (int) _id, _socket);	// RR
 
   if (bytes_written <= 0)
     {
