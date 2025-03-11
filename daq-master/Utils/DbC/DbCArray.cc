@@ -91,7 +91,7 @@ struct DbCSimpleStation * DbCSimpleArrayInit() {
 MYSQL *Connect() {
   MYSQL *traveller;
   traveller = mysql_init(NULL);
-  if (!mysql_real_connect(traveller, "db.auger.org.ar", "mocca", "sibyll", "PMS", 0, NULL, 0)) {
+  if (!mysql_real_connect(traveller, "127.0.0.1", "mocca", "sibyll", "PMS", 0, NULL, 0)) {
     //IkWarningSend("Cannot connect to traveler database. Reason : %s", mysql_error(traveller));
     cerr << "Cannot connect to traveler database. Reason: " << mysql_error(traveller) << endl;
     mysql_close(traveller);
