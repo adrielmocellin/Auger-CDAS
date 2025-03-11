@@ -13,7 +13,7 @@ set (CDASDAQ_VERSION_PATCH "0")       # numerical
 
 # VERBOSE Makefiles for CDAS or not...
 set ( CMAKE_VERBOSE_MAKEFILE false )
-set ( CMAKE_CXX_FLAGS "-Wno-write-strings -std=c++14" )
+set ( CMAKE_CXX_FLAGS "-Wno-write-strings -std=c++17" )
 
 #### Install location
 if (DEFINED prefix)

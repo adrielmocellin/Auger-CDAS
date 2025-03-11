@@ -10,7 +10,7 @@
 
 
 /* storage names */
-typedef unsigned char byte; /* 8 bits */
+typedef unsigned char gs_byte; /* 8 bits */
 
 #ifndef ALPHA              /* to be checked for generalization */
 typedef unsigned short int word; /* 2 bytes */

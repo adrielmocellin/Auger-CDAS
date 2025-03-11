@@ -266,7 +266,7 @@ PmMessReference::PmMessReference (const PmUPLOADMessage& mess)
   longWord* lP = (longWord*) rawData;
   *lP++ = htonl (mess.initPos);
   *lP++ = htonl (mess.length);
-  byte* cP = (byte*) lP;
+  ::byte* cP = (::byte*) lP;
   memcpy (cP, toto, n+1);
   delete[] toto;  
 
