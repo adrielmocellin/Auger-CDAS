@@ -1,0 +1,18 @@
+/*! \mainpage STCoordinates
+
+
+This package deals with transformation of coordinates.
+It also includes usefull constants, as well as the TShowerParams
+class describing a reconstructed shower.
+
+\author Benoit Revenu revenu@cdf.in2p3.fr
+\date July 2002, reformatted February 2005
+
+
+\todo 
+the computation of precession is not yet completely included
+here so that all the coordinates are referred to equinox J2000.
+Only the coefficients are computed.
+The effect of nutation is not taken into account for the moment.
+
+*/

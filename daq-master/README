@@ -1,0 +1,10 @@
+This is the CDAS as it runs since 31 March 2016
+
+The Utils/* are different utilitary packages used by the CDAS processes
+The Offline/* packages are copies of the v5r4 cmake CDAS release as of March 31 2016
+The Apps/* contain the CDAS running processes
+
+This new structure was built before upgrading the DAQ to handle the upgrade
+
+
+-- Xavier, Thu Mar 31 08:36:01 ART 2016

@@ -1,0 +1,3 @@
+class IkSevereCancel {
+  int id
+}

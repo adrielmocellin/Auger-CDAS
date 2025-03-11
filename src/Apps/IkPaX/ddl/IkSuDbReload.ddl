@@ -1,0 +1,3 @@
+class IkSuDbReload {
+  string msg
+}

@@ -1,0 +1,3 @@
+class IkFatal {
+  string msg
+}

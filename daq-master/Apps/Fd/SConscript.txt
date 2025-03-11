@@ -1,0 +1,47 @@
+#
+# SConscript for CDAS Interface Directory
+#
+# $Id$
+#  
+
+Import('env')
+Import('cdas_env')
+
+sub_env = cdas_env.Clone()
+
+# get the rootcflags
+sub_env.ParseConfig('root-config --cflags')
+
+# the sources
+srcs = Split('T3Notify.cc T3NotifyStat.cc')
+
+# the headers
+hdrs = Split('CdasProtocol.hh T3Notify.hh T3NotifyStat.hh FdCdasVersion.hh')
+
+# create the header file
+fduv = sub_env.MakeVersionHeader('FdCdasVersion.hh', sub_env['config_path']+'/Version.h.in')
+
+# build root dictionary
+dict = sub_env.RootDictionary('T3NotifyDict', 
+                        Split('T3Notify.hh T3NotifyStat.hh T3NotifyLinkDef.h') )
+
+srcs += [dict[0]]
+
+# create static & shared library
+lib  = sub_env.Library(sub_env['FDCDASLIB'], srcs)
+slib = sub_env.RevSharedLibrary(sub_env['FDCDASLIB'], srcs)
+
+# what to install where		 
+inst_hdrs  = sub_env.Install(sub_env['include_path'], hdrs)
+inst_lib   = sub_env.Install(sub_env['library_path'], lib)
+inst_shlib = sub_env.Install(sub_env['library_path'], slib)
+
+# make sure the links depend on the real file
+sub_env.Depends(inst_shlib[1], inst_shlib[0])
+sub_env.Depends(inst_shlib[2], inst_shlib[0])
+sub_env.Depends(inst_shlib[3], inst_shlib[0])
+
+
+env.Alias('install', [inst_lib, inst_shlib, inst_hdrs])
+
+# eof

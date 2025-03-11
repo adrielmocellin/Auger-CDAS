@@ -1,0 +1,3 @@
+class IkSuKill {
+  string msg
+}

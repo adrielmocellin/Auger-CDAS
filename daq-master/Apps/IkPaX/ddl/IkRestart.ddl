@@ -1,0 +1,3 @@
+class IkRestart {
+  string msg
+}

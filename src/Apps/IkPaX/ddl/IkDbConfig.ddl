@@ -1,0 +1,3 @@
+class IkDbConfig {
+  string apps
+}

@@ -1,0 +1,3 @@
+class IkWarning {
+  string msg
+}

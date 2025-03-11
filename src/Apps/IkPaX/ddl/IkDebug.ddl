@@ -1,0 +1,3 @@
+class IkDebug {
+  string msg
+}

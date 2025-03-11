@@ -1,0 +1,3 @@
+class IkLsStopAck {
+int StationId
+}

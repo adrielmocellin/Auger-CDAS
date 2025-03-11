@@ -1,0 +1,8 @@
+PROJECT_NAME           = Xb
+PROJECT_NUMBER         = "Version 3.0"
+OUTPUT_DIRECTORY       = ../doc/
+HTML_OUTPUT            = .
+SOURCE_BROWSER         = YES
+EXTRACT_STATIC         = YES
+GENERATE_LATEX         = NO
+PREDEFINED             = DOXYGEN_SHOULD_SKIP_THIS

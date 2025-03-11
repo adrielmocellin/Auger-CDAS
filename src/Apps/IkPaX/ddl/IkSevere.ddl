@@ -1,0 +1,3 @@
+class IkSevere {
+  string msg
+}

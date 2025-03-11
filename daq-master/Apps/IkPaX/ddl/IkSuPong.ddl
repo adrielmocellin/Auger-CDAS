@@ -1,0 +1,3 @@
+class IkSuPong {
+  int PongValue
+}

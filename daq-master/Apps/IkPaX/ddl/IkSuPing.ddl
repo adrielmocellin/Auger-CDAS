@@ -1,0 +1,3 @@
+class IkSuPing {
+  int PingValue
+}

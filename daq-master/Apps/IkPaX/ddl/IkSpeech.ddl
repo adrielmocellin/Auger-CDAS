@@ -1,0 +1,3 @@
+class IkSpeech {
+  string msg
+}

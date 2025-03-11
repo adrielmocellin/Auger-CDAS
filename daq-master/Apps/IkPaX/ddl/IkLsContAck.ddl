@@ -1,0 +1,3 @@
+class IkLsContAck {
+int StationId
+}

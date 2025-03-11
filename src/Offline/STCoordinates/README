@@ -1,0 +1,59 @@
+/** \file README */
+
+These are the files needed to make the library STCoordinates.
+It deals with the transformation of coordinates such as
+galactic, ecliptic, equatorial and local (horizontal).
+
+definitions and conventions :
+-----------------------------
+The elevation is the angle above the horizon.
+The azimuth is measured westwards from the South.
+The geographical longitude is measured positively eastwards.
+
+*************************************************
+* ALL THE ANGLES ARE IN DECIMAL DEGREES EXCEPT  *
+* THE RIGHT ASCENSION WICH IS IN DECIMAL HOURS. *
+*************************************************
+
+The conversion of GPS seconds into UTC time has been added in this version.
+The time in Auger is GPS time and one must convert it into
+UTC time: As of 1 January 1999, GPS is ahead of UTC by 13 seconds.
+The GPS reference is 00h00 UT (midnight) on january 6, 1980. The value given
+in the Auger data is the number of seconds elapsed since this date.
+
+example :
+---------
+you saw an event on 14, november 1972 at 14 h 36 min 17 s UTC in Malargue
+latitude = -35 degrees
+longitude = -69.5 degrees (remember : positively eastwards)
+so that the fraction of day is :
+fracday = 0.6085300926 (using hms2day(14,36,17))
+and the corresponding julian day is :
+jd = 2441636.109 (using date2jd(1972,11,14+fracday,&jd))
+the event has been seen with
+azimuth = 134.2 degrees from south westwards
+and
+elevation = 37 degrees above horizon
+the the galactic coordinates of the event are :
+l = 249.967 degrees
+and
+b = 58.681 degrees.
+
+piece of code corresponding to this example :
+double latitude = -35;
+double longitude = -69.5; // positively eastwards
+double fracday = hms2day(14,36,17);
+cout << fracday << endl;
+double jd;
+date2jd(1972,11,14+fracday,&jd);
+double azimuth = 134.2; // from south westwards
+double elevation = 37; // above horizon
+double l, b;
+azel2gal(latitude,longitude,azimuth,elevation,jd,&l,&b,2000);
+cout << latitude << " " << longitude << " " << l << " " << b << endl;
+gives
+-35 -69.5 249.967424523184 58.6809812354165
+
+====================================================================
+if you notice any problem, do not hesitate to contact me!
+revenu@iap.fr

@@ -1,0 +1,5 @@
+/** \mainpage
+
+ This package provides basic I/O to auger Surface Detector files (sd_*) and
+ implements the classes storing the raw data to disk.
+*/

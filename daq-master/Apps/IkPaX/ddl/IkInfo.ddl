@@ -1,0 +1,3 @@
+class IkInfo {
+  string msg
+}
